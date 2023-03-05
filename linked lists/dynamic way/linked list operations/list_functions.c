@@ -103,32 +103,34 @@ void delete_first_node(){
 void add_node(int position,int val)
 {
     node_x *ptr = head;
-    node_x *ptr_prev;
-    int counter = 0;
-    if(ptr==NULL)
-    {
-        printf("Empty list\n");
-    }
-    else if(position == 0)
+    node_x *ptr_nxt;
+    int counter = 0, addflag = 0;
+    
+    if(position == 0)
     {
         add_first_node(val);
+    }
+    else if(ptr==NULL)
+    {
+        printf("Empty list\n");
     }
     else{
         while(ptr!=NULL)
         {
             if(counter+1==position)
             {
-            node_x *temp  = malloc(sizeof(node_x));
-            temp->value=val;
-            temp->ptr_next=ptr->ptr_next;
-            ptr_prev->ptr_next=temp;
-            printf("Node added\n");
+                node_x *temp  = malloc(sizeof(node_x));
+                ptr_nxt = ptr->ptr_next;
+                ptr->ptr_next = temp;
+                temp->value=val;
+                temp->ptr_next=ptr_nxt;
+                printf("Node added\n");
             }
-            ptr_prev=ptr;
+            ptr_nxt=ptr;
             ptr=ptr->ptr_next;
             counter++;
         }
-        if (position > counter+1)
+        if (!addflag)
         {
             printf("Position not Found\n");
         }
@@ -142,6 +144,7 @@ void delete_node(int position)
     node_x *ptr = head;
     node_x *ptr_nxt;
     int counter = 0;
+    int deleteflag = 0;
     if(head==NULL)
     {
         printf("Empty List\n");
@@ -159,15 +162,16 @@ void delete_node(int position)
                 ptr_nxt = ptr->ptr_next;
                 ptr->ptr_next = ptr->ptr_next->ptr_next;
                 free(ptr_nxt);
+                deleteflag = 1;
                 printf("Node deleted\n");
                 break;
             }
             ptr = ptr->ptr_next;
             counter++;
         }
-        if (position > counter+1)
+        if (!deleteflag)
         {
-            printf("Position not Found\n");
+            printf("Position not found\n");
         }
     }
 

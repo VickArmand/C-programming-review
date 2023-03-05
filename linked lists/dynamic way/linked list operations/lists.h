@@ -6,7 +6,6 @@ typedef struct node {
     int value;
     struct node *ptr_next;
 }node_x;
-node_x *head;
 
 void print_list();
 void add_last_node(int);

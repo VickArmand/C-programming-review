@@ -140,6 +140,7 @@ void add_node(int position,int val)
 void delete_node(int position)
 {
     node_x *ptr = head;
+    node_x *ptr_nxt;
     int counter = 0;
     if(head==NULL)
     {
@@ -155,15 +156,16 @@ void delete_node(int position)
         {
             if(counter+1 == position)
             {
+                ptr_nxt = ptr->ptr_next;
                 ptr->ptr_next = ptr->ptr_next->ptr_next;
-                free(ptr->ptr_next);
+                free(ptr_nxt);
                 printf("Node deleted\n");
                 break;
             }
             ptr = ptr->ptr_next;
             counter++;
         }
-        if (position > counter)
+        if (position > counter+1)
         {
             printf("Position not Found\n");
         }

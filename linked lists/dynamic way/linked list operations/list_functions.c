@@ -154,7 +154,7 @@ void delete_node(int position)
     {
         while(ptr!=NULL)
         {
-            if(counter+1 == position)
+            if((counter+1 == position) && (ptr->ptr_next != NULL))
             {
                 ptr_nxt = ptr->ptr_next;
                 ptr->ptr_next = ptr->ptr_next->ptr_next;

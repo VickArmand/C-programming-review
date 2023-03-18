@@ -1,6 +1,6 @@
 #define CAPACITY 50000 // Size of the HashTable.
 // Defines the HashTable item.
-
+#include <stdio.h>
 typedef struct Ht_item
 {
     char* key;

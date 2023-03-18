@@ -1,28 +1,10 @@
+#include "sort.h"
 #include <stdio.h>
-void f(int n)
+int main(void)
 {
-    int i;
-    int j;
-
-    for (i = 0; i < n; i++)
-    {
-        if (i % 2 == 0)
-        {
-            for (j = 1; j < n; j = j * 2)
-            {
-                printf("+[%d] [%d]\n", i, j);
-            }
-        }
-        else
-        {
-            for (j = 0; j < n; j = j + 2)
-            {
-                printf("-[%d] [%d]\n", i, j);
-            }
-        }
-    }
-}
-int main()
-{
-    f(5);
+    //int array[] = {48,19,99,71,13,52,96,73,86,7};
+    int array[] = {1,2,3,4,5,6,7};
+    size_t n = sizeof(array)/sizeof(array[0]);
+    printf("%lu\n", n);
+    bubble_sort(array, n);
 }

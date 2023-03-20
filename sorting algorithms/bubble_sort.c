@@ -1,5 +1,8 @@
 #include <stdlib.h>
 #include "sort.h"
+/**
+ * bubble sort works by comparing 2 adjacent elements starting from the left
+*/
 void bubble_sort(int *array, size_t size)
 {
     size_t i, j;

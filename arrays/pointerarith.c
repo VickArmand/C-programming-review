@@ -5,7 +5,7 @@ int main(void)
     int nums[3]={1,2,3};
     int i;
     int len = sizeof(nums)/sizeof(nums[0]);
-        printf("This is first element in the array is %d\n", *(nums));
+    printf("This is first element in the array is %d\n", *(nums));
     for(i =0; i<len; i++)
     {
         printf("This is element number %d whose value is %d\n",i, *(nums+i));

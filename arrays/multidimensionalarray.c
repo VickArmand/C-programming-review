@@ -6,7 +6,7 @@ int main(void)
     printf("%d\n",arr[1][1]);
     printf("%d\n",*(*(arr + 1)+1));
     printf("%p\n",*(arr));// Address of first array
-    printf("%p\n",&arr);// Address of second array
+    printf("%p\n",&arr);// Address of first array
     printf("%p\n",&arr[1]);// Address of second array
     printf("%p\n",*(arr + 1));// Address of second array
     printf("%p\n",&arr[1]+1); // adds 4 bytes

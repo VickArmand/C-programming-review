@@ -2,7 +2,8 @@
 	int main()
 	{
 	int value=20;
-	int *ptr= &value;
+	int (*ptr);
+	ptr = &value;
 	// * is used to dereference a pointer meaning obtaining the value stored in a memory address
 	// ptr stores the address while *ptr obtains the value
 	printf("%d\n",*ptr);

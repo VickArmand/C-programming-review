@@ -33,7 +33,7 @@ int main(void)
         else
         {
             wait(&wstatus);
-            printf("Loop number %d\n",i)
+            printf("Loop number %d\n",i);
         }
     }
 }

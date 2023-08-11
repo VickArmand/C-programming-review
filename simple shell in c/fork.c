@@ -10,7 +10,7 @@ int main(void)
     pid_t pid;
 
     printf("Before fork");
-    pid = fork(); // fork starts a new process wile keeping the existing one running
+    pid = fork(); // fork starts a child process wile keeping the existing one running
     if(pid == 0)
     {
         printf("I am a child process with ID = %d\n", getpid());

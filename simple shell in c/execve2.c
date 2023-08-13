@@ -1,20 +1,20 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int main(int argc, char *argv[], char **env)
+/**
+ * main - execve example
+ *
+ * Return: Always 0.
+ */
+int main(void)
 {
-    const char *av[] = {"ls", "-lha", NULL};
-    int x;
-    x = execve(av[0], av, NULL);
-    // execve runs a program while another program is running
-    // execve takes in the pathname, argv and envp
-    if(x == -1)
+    char *argv[] = {"/bin/ls", "-l", "/usr/", NULL};
+
+    printf("Before execve\n");
+    if (execve(argv[0], argv, NULL) == -1)
     {
-        printf("execve failed");
+        perror("Error:");
     }
-    else
-    {
-        printf("execve success");
-    }
-    return 0;
+    printf("After execve\n");
+    return (0);
 }

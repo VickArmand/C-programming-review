@@ -8,7 +8,7 @@ int main()
     strtok(NULL, " ");
     printf("%s\n", str);
     for(i = 0; i< 19; i++)
-        printf("%d ", str[i]);
+        printf("%c ", str[i]);
     putchar(10);
     return 0;
 }

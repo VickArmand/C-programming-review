@@ -3,6 +3,8 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/stat.h>
+
 /**
  * This code obtains  the status of a file (if it is present or not)
 */

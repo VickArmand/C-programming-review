@@ -2,18 +2,13 @@
 #include <string.h>
 int main()
 {
-    char *str = "Hello how are you!";
-    char *str_new;
-    int i = 0;
-    int len = strlen(str);
-
-    while (*str != '\0')
-    {   
-        strtok(str, " ");
-        //printf("%s\n", strtok(str, " "));
-        str += strlen(str);
-        str_new = str;
-        printf("%s\n", str_new);
-    }
+    int i;
+    char str[] = "Hello how are you!";
+    strtok(str, " ");
+    strtok(NULL, " ");
+    printf("%s\n", str);
+    for(i = 0; i< 19; i++)
+        printf("%c ", str[i]);
+    putchar(10);
     return 0;
 }

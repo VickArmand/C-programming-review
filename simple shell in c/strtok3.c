@@ -16,9 +16,9 @@ int main()
         printf("%s\n", arr[i]);
         i++;
     }
-    for(j = 0; arr[j]!=NULL; j++)
-    {
-        printf("%s\n", arr[j]);
-    }
+    // for(j = 0; arr[j]!=NULL; j++)
+    // {
+    //     printf("%s\n", arr[j]);
+    // }
     return 0;
 }

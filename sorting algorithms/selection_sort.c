@@ -1,28 +1,29 @@
+#include <stdio.h>
 #include "sort.h"
 /**
- * selection sort works by finding the minimum element in the array and swapping it to the left
+ * This function demonstrates selection sort by
+ * obtaining minimum value of the array
+ * and placing it at the right index on the left
+ * @array: integer array
+ * @size: length of array
 */
 void selection_sort(int *array, size_t size)
 {
-    size_t i, j;
-    int temp, min_index;
-    for(i = 0; i < size; i++)
+    int i, j, min, temp;
+    for (i = 0; i < size; i++)
     {
-        min_index = i;
-        printf("Iteration %lu\n",i);
-        for (j = i+1; j < size; j++)/* loop to find the minimum element of the array*/
+        min = array[i];/* initializing the minimum element */
+        for (j = i + 1; j < size; j++)/* loop to find the minimum element of the array*/
         {
-            if (array[i] > array[j])
-            { 
-                min_index = j;
+            if (array[j] < min)
+            {
+                min = array[j];
+                /* after finding the minimum element we swap the elements */
+                temp = array[j];
+                array[j] = array[i];
+                array[i] = temp;
+                print_array(array, size);
             }
-        }
-        if (min_index != i)
-        {
-            temp = array[i];
-            array[i] = array[min_index];
-            array[min_index] = temp;
-            print_array(array, size);
         }
     }
 }

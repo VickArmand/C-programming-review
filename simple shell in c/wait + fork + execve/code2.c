@@ -14,6 +14,9 @@ int main(void)
     int status;
 
     child_pid = fork();
+    /*
+    * fork: creates a child process by duplicating the parent process
+    */
     if (child_pid < 0)
     {
         perror("I am the parent process but child process couldnt be created");
